@@ -1,7 +1,7 @@
 {
   "name": "gitbook-plugin-intopic-toc",
   "version": "0.1.0",
-  "description": "GitBook plugin to show an intopic TOC.",
+  "description": "GitBook Plugin to add inline table of contents (TOC) to each page based on configurable selectors.",
   "keywords": [
     "gitbook",
     "plugin",
