@@ -1,0 +1,50 @@
+{
+  "name": "gitbook-plugin-intopic-toc",
+  "version": "1.0.0",
+  "description": "GitBook Plugin to add inline table of contents (TOC) to each page based on configurable selectors.",
+  "keywords": [
+    "gitbook",
+    "plugin",
+    "toc",
+    "anchor"
+  ],
+  "author": "Fabian Zankl",
+  "license": "MIT",
+  "engines": {
+    "gitbook": ">=2.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "homepage": "https://github.com/zanfab/gitbook-plugin-intopic-toc#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zanfab/gitbook-plugin-intopic-toc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zanfab/gitbook-plugin-intopic-toc/issues"
+  },
+  "gitbook": {
+    "properties": {
+      "selector": {
+        "type": "string",
+        "default": ".markdown-section h2",
+        "title": "Selector used to find elements to put anchors on."
+      },
+      "visible": {
+        "type": "boolean",
+        "default": true,
+        "title": "Defines whether to show the navigation on every page."
+      },
+      "label": {
+        "type": [
+          "string",
+          "object"
+        ],
+        "default": "In this article",
+        "title": "Label which is used as heading for the navigation."
+      }
+    }
+  }
+}
