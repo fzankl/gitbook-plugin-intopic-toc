@@ -2,9 +2,9 @@
 
 This GitBook Plugin adds an inline table of contents (TOC) to each page based on configurable selectors. Inline TOC can be enabled or disabled by default or on individual pages. TOC is placed on the right side and moves to top for smaller devices automatically.
 
-![Inline TOC in desktop and mobile mode](https://user-images.githubusercontent.com/44210522/50728477-ab322680-112a-11e9-92da-4de20e17758d.png)
-
 Inline TOC stays at the top of the page when scrolling using a sticky effect. Current position is highlighted by a scrollspy effect.
+
+![Inline TOC in desktop and mobile mode](https://user-images.githubusercontent.com/44210522/50728477-ab322680-112a-11e9-92da-4de20e17758d.png)
 
 ## Installation
 
@@ -100,7 +100,7 @@ isTocVisible: false
 ---
 # My awesome documentation
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ...
 ```
 
 The specific front matter `isTocVisible` overrides the `visible` parameter from global configuration.
