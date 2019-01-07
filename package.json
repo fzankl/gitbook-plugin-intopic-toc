@@ -1,12 +1,13 @@
 {
   "name": "gitbook-plugin-intopic-toc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitBook Plugin to add inline table of contents (TOC) to each page based on configurable selectors.",
   "keywords": [
     "gitbook",
     "plugin",
     "toc",
-    "anchor"
+    "anchor",
+    "table-of-contents"
   ],
   "author": "Fabian Zankl",
   "license": "MIT",

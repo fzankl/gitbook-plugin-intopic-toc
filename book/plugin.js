@@ -51,13 +51,19 @@ require(["gitbook", "jQuery"], function(gitbook, $) {
             var section = document.body.querySelector('.page-wrapper');
             section.appendChild(navigation, section.firstChild);
 
-            $(".book-body .body-inner").scroll(onScroll);
+            gumshoe.init({
+                container: $(".book-body .body-inner")[0],
+                offset: 20,
+                scrollDelay: false,
+                activeClass: 'selected'
+            });
         }
     });
 });
 
 function buildNavigation(elements) {
     var navigation = document.createElement('nav');
+    navigation.setAttribute('data-gumshoe-header', '');
     navigation.className = 'intopic-toc';
 
     var heading = document.createElement('h3');
@@ -65,6 +71,7 @@ function buildNavigation(elements) {
     navigation.appendChild(heading);
 
     var container = document.createElement('ol');
+    container.setAttribute('data-gumshoe', '');
     navigation.appendChild(container);
 
     for (var i = 0; i < elements.length; i++) {
@@ -86,30 +93,4 @@ function buildNavigation(elements) {
     }
 
     return navigation;
-}
-
-function onScroll(e) {
-    const currentPosition = $(e.target).scrollTop() + $('.book-header').height();
-
-    for (var i = 0; i < anchors.elements.length; i++) {
-        const section = anchors.elements[i];
-        const isInView = $(section).offset().top < currentPosition;
-
-        if (isInView) {
-            const menuItemID = section.getAttribute('id');
-            const activeItem = $(`.intopic-toc ol li`).has(`a[href="#${menuItemID}"]`);
-            
-            if (!activeItem) {
-                return;
-            }
-
-            $('.intopic-toc ol li').each(function() {
-                $(this).attr('data-active', 'false');
-                $(this).removeClass('selected');
-            });
-
-            $(activeItem).attr('data-active', 'true');
-            $(activeItem).addClass('selected');
-        }
-    }
 }
