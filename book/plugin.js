@@ -77,8 +77,10 @@ function buildNavigation(elements) {
     for (var i = 0; i < elements.length; i++) {
         var text = elements[i].textContent;
         var href = elements[i].querySelector('.anchorjs-link').getAttribute('href');
+        var tag = elements[i].tagName;
 
         var item = document.createElement('li');
+        item.classList.add(tag.toLowerCase());
 
         if (i === 0) {
             item.classList.add('selected');
