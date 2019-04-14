@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-intopic-toc",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "GitBook Plugin to add inline table of contents (TOC) to each page based on configurable selectors.",
   "keywords": [
     "gitbook",
@@ -16,7 +16,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "build": "rollup -c",
+    "clean": "rimraf dist/*",
+    "prepare": "npm run clean && npm run build",
+    "start": "npm run build -- -w"
   },
   "homepage": "https://github.com/zanfab/gitbook-plugin-intopic-toc#readme",
   "repository": {
@@ -25,6 +28,21 @@
   },
   "bugs": {
     "url": "https://github.com/zanfab/gitbook-plugin-intopic-toc/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "eslint": "^5.14.1",
+    "lodash.merge": "^4.6.1",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.2.3",
+    "rollup-copy-plugin": "^0.1.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-copy-assets": "^1.1.0",
+    "rollup-plugin-eslint": "^5.0.0",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-uglify": "^6.0.2",
+    "rollup-plugin-url": "^2.2.0"
   },
   "gitbook": {
     "properties": {
