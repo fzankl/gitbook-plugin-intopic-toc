@@ -74,6 +74,7 @@ function buildNavigation(elements) {
     container.setAttribute('data-gumshoe', '');
     navigation.appendChild(container);
 
+    var headingLevel = "h1";
     for (var i = 0; i < elements.length; i++) {
         var text = elements[i].textContent;
         var href = elements[i].querySelector('.anchorjs-link').getAttribute('href');
@@ -82,13 +83,24 @@ function buildNavigation(elements) {
 
         if (i === 0) {
             item.classList.add('selected');
+            headingLevel = elements[i].localName;
         }
 
+        var level = elements[i].localName;
+        var indent = (level.substring(1) - headingLevel.substring(1)) * 16;
+
+        var div = document.createElement('div');
+        div.style.marginLeft = indent + "px";
+
         var anchor = document.createElement('a');
+        
         anchor.text = text;
         anchor.href = href;
 
-        item.appendChild(anchor);
+        div.appendChild(anchor);
+
+        item.appendChild(div);
+
         container.appendChild(item);
     }
 
