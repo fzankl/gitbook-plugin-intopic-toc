@@ -115,6 +115,8 @@ If inline TOC does not look as expected, check if your `book.json` is valid acco
 
 ## Changelog
 
-01/07/2019 - Used [gumshoe scrollspy script](https://github.com/cferdinandi/gumshoe)  for a better experience
+04/14/2019 - Added support for different navigation levels with optional tree lines.
+
+01/07/2019 - Used [gumshoe scrollspy script](https://github.com/cferdinandi/gumshoe) for a better experience
 
 01/05/2019 - Initial Release
