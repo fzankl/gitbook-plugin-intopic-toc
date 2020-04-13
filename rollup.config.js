@@ -3,8 +3,8 @@ const path = require('path');
 import babel from 'rollup-plugin-babel';
 import merge from 'lodash.merge';
 import pkg from './package.json';
-import resolve from 'rollup-plugin-node-resolve';
-import url from "rollup-plugin-url";
+import resolve from '@rollup/plugin-node-resolve';
+import url from '@rollup/plugin-url';
 
 import { uglify } from 'rollup-plugin-uglify';
 import { eslint } from 'rollup-plugin-eslint';

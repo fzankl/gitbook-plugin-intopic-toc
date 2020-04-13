@@ -22,3 +22,7 @@ indent_size = 2
 [*.yml]
 insert_final_newline = true
 indent_size = 2
+
+[*.css]
+insert_final_newline = false
+indent_size = 2
