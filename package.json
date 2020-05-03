@@ -30,26 +30,46 @@
     "url": "https://github.com/zanfab/gitbook-plugin-intopic-toc/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1",
-    "eslint": "^5.14.1",
-    "lodash.merge": "^4.6.1",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.2.3",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-url": "^4.0.2",
+    "eslint": "^6.8.0",
+    "lodash.merge": "^4.6.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.32.1",
     "rollup-copy-plugin": "^0.1.0",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-copy-assets": "^1.1.0",
-    "rollup-plugin-eslint": "^5.0.0",
-    "rollup-plugin-node-resolve": "^4.0.1",
-    "rollup-plugin-uglify": "^6.0.2",
-    "rollup-plugin-url": "^2.2.0"
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-copy-assets": "^2.0.1",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-uglify": "^6.0.4"
   },
   "gitbook": {
     "properties": {
       "selector": {
         "type": "string",
-        "default": ".markdown-section h2",
-        "title": "Selector used to find elements to put anchors on."
+        "default": ".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6",
+        "title": "Selector used to find elements to put anchors on - only HTML headings h1 - h6 are allowed."
+      },
+      "mode": {
+        "type": "string",
+        "default": "nested",
+        "title": "Defines how plugin will be rendered. Possible values: 'flat' or 'nested'."
+      },
+      "maxDepth": {
+        "type": "number",
+        "default": 6,
+        "title": "Defines the amount of headings which should be considered during rendering."
+      },
+      "isCollapsed": {
+        "type": "boolean",
+        "default": true,
+        "title": "Defines whether the items are collapsed by default and are only expanded when activated. (Only considered when mode = 'nested')"
+      },
+      "isScrollspyActive": {
+        "type": "boolean",
+        "default": true,
+        "title": "Defines whether scrollspy effect should be applied."
       },
       "visible": {
         "type": "boolean",
