@@ -171,7 +171,7 @@ If inline TOC does not look as expected, check if your `book.json` is valid acco
 
 ## Changelog
 
-04/13/2020 - Added support for different layout modes along with improved scrollspy experience
+05/03/2020 - Added support for different layout modes along with improved scrollspy experience
 
 01/07/2019 - Used [gumshoe scrollspy script](https://github.com/cferdinandi/gumshoe) for a better experience
 
