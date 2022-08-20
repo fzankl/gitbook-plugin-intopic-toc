@@ -172,7 +172,7 @@ If inline TOC does not look as expected, check if your `book.json` is valid acco
 ## Changelog
 
 08/20/2022
-- Udated development dependencies and moved to GitHub Actions
+- Updated development dependencies and moved to GitHub Actions
 - Updated [anchorjs](https://github.com/bryanbraun/anchorjs) dependency to version 4.3.1
 
 05/03/2020
