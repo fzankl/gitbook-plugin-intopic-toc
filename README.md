@@ -1,6 +1,6 @@
 # GitBook plugin: InTopic TOC
 
-![Build Status](https://api.travis-ci.org/zanfab/gitbook-plugin-intopic-toc.svg)
+[![Build Status](https://github.com/fzankl/gitbook-plugin-intopic-toc/actions/workflows/main.yml/badge.svg)](https://github.com/fzankl/gitbook-plugin-intopic-toc)
 [![npm version](https://img.shields.io/npm/v/gitbook-plugin-intopic-toc/latest.svg)](https://www.npmjs.com/package/gitbook-plugin-intopic-toc)
 [![npm Downloads](https://img.shields.io/npm/dt/gitbook-plugin-intopic-toc.svg)](https://www.npmjs.com/package/gitbook-plugin-intopic-toc)
 
@@ -171,8 +171,15 @@ If inline TOC does not look as expected, check if your `book.json` is valid acco
 
 ## Changelog
 
-05/03/2020 - Added support for different layout modes along with improved scrollspy experience
+08/20/2022
+- Udated development dependencies and moved to GitHub Actions
+- Updated [anchorjs](https://github.com/bryanbraun/anchorjs) dependency to version 4.3.1
 
-01/07/2019 - Used [gumshoe scrollspy script](https://github.com/cferdinandi/gumshoe) for a better experience
+05/03/2020
+- Added support for different layout modes along with improved scrollspy experience
 
-01/05/2019 - Initial Release
+01/07/2019
+- Used [gumshoe scrollspy script](https://github.com/cferdinandi/gumshoe) for a better experience
+
+01/05/2019
+- Initial Release
