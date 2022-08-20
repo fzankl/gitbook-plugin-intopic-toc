@@ -1,15 +1,14 @@
 const path = require('path');
 
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import merge from 'lodash.merge';
 import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
 import url from '@rollup/plugin-url';
-
-import { uglify } from 'rollup-plugin-uglify';
-import { eslint } from 'rollup-plugin-eslint';
-
 import copy from 'rollup-plugin-copy-assets';
+
+import { terser } from 'rollup-plugin-terser';
+import { eslint } from 'rollup-plugin-eslint';
 
 // Banner
 const bannerData = [
@@ -29,6 +28,7 @@ const pluginSettings = {
   },
   babel: {
     exclude: ['node_modules/**'],
+    babelHelpers: 'bundled',
     presets: [
       ['@babel/preset-env', {
         modules: false,
@@ -43,21 +43,11 @@ const pluginSettings = {
     include: ["**/*.svg"], // defaults to .svg, .png, .jpg and .gif files
     emitFiles: true // defaults to true
   },
-  uglify: {
-    beautify: {
-      compress: false,
-      mangle: false,
-      output: {
-        beautify: true,
-        comments: /(?:^!|@(?:license|preserve))/
-      }
-    },
-    minify: {
-      compress: true,
-      mangle: true,
-      output: {
-        comments: new RegExp(pkg.name)
-      }
+  terser: {
+    compress: true,
+    mangle: true,
+    output: {
+      comments: new RegExp(pkg.name)
     }
   }
 };
@@ -87,7 +77,7 @@ const indexCJS = merge({}, config, {
     format: 'cjs'
   },
   plugins: [
-    uglify(pluginSettings.uglify.minify)
+    terser(pluginSettings.terser)
   ]
 });
 
@@ -98,12 +88,12 @@ const pluginCJS = merge({}, config, {
     format: 'cjs'
   },
   plugins: [
-    uglify(pluginSettings.uglify.minify),
+    terser(pluginSettings.terser),
     copy({
       assets: [
-        './src/book/style.css',
-        './src/book/anchor.min.js',
-        './src/book/gumshoe.polyfills.min.js'
+        './style.css',
+        './anchor.min.js',
+        './gumshoe.polyfills.min.js'
       ]
     })
   ]
